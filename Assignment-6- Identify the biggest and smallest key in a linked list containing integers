@@ -1,0 +1,47 @@
+#Identify the biggest and smallest key in a linked list containing integers  
+class Node:   
+    def __init__(self): 
+        self.data = None
+        self.next = None  
+head = None  
+def largestElement(head):   
+    max = -32767  
+    while (head != None):   
+        if (max < head.data) : 
+            max = head.data  
+        head = head.next      
+    return max  
+def smallestElement(head):    
+    min = 32767 
+    while (head != None) :   
+        if (min > head.data) : 
+            min = head.data  
+        head = head.next      
+    return min 
+def push( data) :   
+    global head   
+    newNode = Node()    
+    newNode.data = data    
+    newNode.next = (head)    
+    (head) = newNode    
+def printList( head) : 
+    while (head != None) : 
+        print(head.data ,end= " ")  
+        head = head.next
+push(1)  
+push(2)  
+push(3)  
+push(4)  
+push(5)  
+print("Linked list is : ")    
+printList(head)  
+print("\nMaximum element in linked list: ",end="")    
+print(largestElement(head))  
+print("Minimum element in linked list: ",end="")    
+print(smallestElement(head),end="")
+
+Output : 
+Linked list is : 
+5 4 3 2 1 
+Maximum element in linked list: 5
+Minimum element in linked list: 1
