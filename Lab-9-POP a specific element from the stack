@@ -1,0 +1,32 @@
+#POP a specific element from the stack
+a = []
+n = int(input("enter the number of elements to append : "))
+print("enter "+str(n)+" numbers: ")
+for i in range(0,n):
+    b = input()
+    a.append(b)
+print("initial stack")
+print(a)
+c = input("enter the element that want to delete : ")
+if c not in a:
+    print(str(c)+" is not found in stack ")
+    exit()
+for i in range(0,n-1):
+    if  a[i]== c:
+        a.pop(i)
+print("final stack")
+print(a)
+
+Output :
+
+enter the number of elements to append : 4
+enter 4 numbers: 
+1
+2
+3
+4
+initial stack
+['1', '2', '3', '4']
+enter the element that want to delete : 2
+final stack
+['1', '3', '4']
