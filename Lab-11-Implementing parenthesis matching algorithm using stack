@@ -1,0 +1,32 @@
+#implementing parenthesis matching algorithm using stack
+def par(A): 
+    S = []  
+    for c in A: 
+        if c in ["(", "{", "["]: 
+            S.append(c) 
+        else:  
+            if not S: 
+                return False
+            c1 = S.pop() 
+            if c1 == '(': 
+                if c != ")": 
+                    return False
+            if c1 == '{': 
+                if c != "}": 
+                    return False
+            if c1 == '[': 
+                if c != "]": 
+                    return False 
+    if S: 
+        return False
+    return True  
+A = input("enter the input : ") 
+if par(A): 
+    print("the given parenthesis is correctly matched ") 
+else: 
+    print("the given parenthesis is  not correctly matched")
+    
+  Output :
+    
+  enter the input : (){[{}]}
+the given parenthesis is correctly matched  
