@@ -1,0 +1,52 @@
+#creating a binary tree with atleast 12 nodes
+class Node:
+    def __init__(self,n):
+        self.left = None
+        self.right = None
+        self.n = n
+def insert(root,n1): 
+    if root is None: 
+        return Node(n1) 
+    else: 
+        if root.n == n1: 
+            return root 
+        elif root.n < n1: 
+            root.right = insert(root.right,n1) 
+        else: 
+            root.left = insert(root.left,n1) 
+    return root
+def order(root):
+    if root:
+        order(root.left)
+        print(root.n)
+        order(root.right)
+print("printing the binary tree: ")
+root = Node(1)
+root = insert(root,3)
+root = insert(root,6)
+root = insert(root,4)
+root = insert(root,2)
+root = insert(root,5)
+root = insert(root,9)
+root = insert(root,7)
+root = insert(root,8)
+root = insert(root,12)
+root = insert(root,11)
+root = insert(root,10)
+order(root)
+
+Output :
+
+printing the binary tree: 
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
